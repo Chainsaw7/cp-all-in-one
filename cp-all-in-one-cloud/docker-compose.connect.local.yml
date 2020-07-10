@@ -3,7 +3,7 @@ version: '2'
 services:
 
   connect:
-    image: localbuild/connect_custom_example:latest
+    image: erether/azure_container:latest
     hostname: connect
     container_name: connect
     ports:
@@ -16,9 +16,9 @@ services:
       CONNECT_OFFSET_STORAGE_TOPIC: demo-connect-offsets
       CONNECT_STATUS_STORAGE_TOPIC: demo-connect-status
       CONNECT_REPLICATION_FACTOR: 3
-      CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR: 3
-      CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: 3
-      CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: 3
+      CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR: 1
+      CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: 1
+      CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: 1
       CONNECT_KEY_CONVERTER: "org.apache.kafka.connect.storage.StringConverter"
       CONNECT_VALUE_CONVERTER: "io.confluent.connect.avro.AvroConverter"
       CONNECT_VALUE_CONVERTER_SCHEMAS_ENABLE: "true"
